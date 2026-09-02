@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  font-family: 'Poppins',sans-serif;
+  color-scheme: dark;
+  background: #06192b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*{
+  font-family: 'Poppins',sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button { cursor: pointer; }
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+.nav-icon {
+  display: grid;
+  height: 42px;
+  width: 42px;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.11);
+  background: rgba(255,255,255,.035);
+  color: rgba(255,255,255,.72);
+  transition: .2s ease;
+}
+.nav-icon:hover { background: rgba(255,255,255,.08); color: white; }
+.round-control {
+  display: grid;
+  height: 44px;
+  width: 44px;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(7,24,39,.16);
+  background: #f8f4ed;
+  box-shadow: 0 8px 24px rgba(22,28,31,.08);
+}
+
+.light-theme { color-scheme: light; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+.presentation-control {
+  display: grid;
+  height: 40px;
+  width: 40px;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.045);
+  color: rgba(255,255,255,.70);
+  transition: .2s ease;
+}
+.presentation-control:hover { background: rgba(255,255,255,.10); color: white; }
+
+.presentation-nav {
+  display: inline-flex;
+  height: 44px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.045);
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.70);
+  transition: .2s ease;
+}
+.presentation-nav:hover { background: rgba(255,255,255,.10); color: white; }
+.presentation-nav-primary { border-color: rgba(215,163,76,.20); background: #d7a34c; color: #071827; }
+.presentation-nav-primary:hover { background: #e8ba68; color: #071827; }
