@@ -1,0 +1,37 @@
+import type { PresentationSlide } from "../../../types"
+import Conclusion from "../Conclusion/Conclusion"
+import Ffom from "../Ffom/Ffom"
+import Objectives from "../Objectives/Objectives"
+import Opening from "../Opening/Opening"
+import Problematic from "../Problematic/Problematic"
+import Procedure from "../Procedure/Procedure"
+import Recommendations from "../Recommendations/Recommendations"
+import Stage from "../Stage/Stage"
+
+export default function SlideContent({slide}: {slide: PresentationSlide}) {
+  switch (slide.type) {
+    case 'opening':
+      return <Opening slide={slide} />
+
+    case 'problematic':
+      return <Problematic slide={slide} />
+
+    case 'objectives':
+      return <Objectives slide={slide} />
+
+    case 'stage':
+      return <Stage slide={slide} />
+
+    case 'procedure':
+      return <Procedure slide={slide} />
+
+    case 'ffom':
+      return <Ffom slide={slide} />
+
+    case 'recommendations':
+      return <Recommendations slide={slide} />
+
+    case 'conclusion':
+      return <Conclusion slide={slide} />
+  }
+}

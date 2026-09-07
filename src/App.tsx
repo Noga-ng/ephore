@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { parts, thesis } from './homeData'
-import SoutenanceMode from './components/SoutenanceMode'
 import Navbar from './components/Navigation/NavBar'
 import HeroBackdrop from './components/Hero/HeroBackdrop'
 import Stats from './components/Stats/Stats'
@@ -20,6 +19,7 @@ import SectionHeading from './components/Sections/SectionHeading'
 import PartCard from './components/Parts/PartCard'
 import FeatureGrid from './components/Includes/FeatureGrid'
 import Footer from './components/Includes/Footer'
+import SoutenanceMode from './components/Soutenance/SoutenanceMode'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },

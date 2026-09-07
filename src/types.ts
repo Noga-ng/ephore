@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
+import type { IconType } from 'react-icons'
 
-export type AppIcon = LucideIcon
-
+export type AppIcon = LucideIcon | IconType
 export interface ThesisInfo {
   student: string
   school: string
@@ -38,11 +38,18 @@ export interface FeatureItem {
   link: string
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              PRESENTATION                                  */
+/* -------------------------------------------------------------------------- */
+
 interface BaseSlide {
   id: string
   kicker: string
 }
 
+/**
+ * 1. Introduction
+ */
 export interface OpeningSlide extends BaseSlide {
   type: 'opening'
   title: string
@@ -50,25 +57,19 @@ export interface OpeningSlide extends BaseSlide {
   note: string
 }
 
-export interface ContextCard {
-  title: string
-  text: string
-  icon: AppIcon
-}
-
-export interface ContextSlide extends BaseSlide {
-  type: 'context'
-  title: string
-  body: string
-  cards: ContextCard[]
-}
-
+/**
+ * 2. Problématique
+ */
 export interface ProblematicSlide extends BaseSlide {
   type: 'problematic'
   title: string
+  question: string
   chips: string[]
 }
 
+/**
+ * 3. Objectifs
+ */
 export interface ObjectivesSlide extends BaseSlide {
   type: 'objectives'
   title: string
@@ -77,38 +78,104 @@ export interface ObjectivesSlide extends BaseSlide {
   icon: AppIcon
 }
 
-export interface HypothesisItem {
+/**
+ * 4. Stage
+ */
+export interface StageInfo {
+  label: string
+  value: string
+  icon: AppIcon
+}
+
+export interface StageSlide extends BaseSlide {
+  type: 'stage'
+  title: string
+  company: string
+  location: string
+  duration: string
+  description: string
+  activities: string[]
+  infos: StageInfo[]
+  image:string
+}
+
+/**
+ * 5. Procédure en 3 phases
+ */
+export interface ProcedurePhase {
   number: string
   title: string
-  text: string
+  description: string
+  steps: string[]
+  icon: AppIcon
 }
 
-export interface HypothesesSlide extends BaseSlide {
-  type: 'hypotheses'
+export interface ProcedureSlide extends BaseSlide {
+  type: 'procedure'
   title: string
-  hypotheses: HypothesisItem[]
+  phases: ProcedurePhase[]
 }
 
-export interface MethodStep {
+/**
+ * 6. Analyse FFOM
+ */
+export interface FfomItem {
+  title: string
+  items: string[]
+}
+
+export interface FfomSlide extends BaseSlide {
+  type: 'ffom'
+  title: string
+  strengths: FfomItem
+  weaknesses: FfomItem
+  opportunities: FfomItem
+  threats: FfomItem
+}
+
+/**
+ * 7. Recommandations
+ */
+export interface RecommendationItem {
   number: string
   title: string
   text: string
   icon: AppIcon
 }
 
-export interface MethodSlide extends BaseSlide {
-  type: 'method'
+export interface RecommendationsSlide extends BaseSlide {
+  type: 'recommendations'
   title: string
-  steps: MethodStep[]
+  recommendations: RecommendationItem[]
 }
 
+/**
+ * 8. Conclusion
+ */
+export interface ConclusionSlide extends BaseSlide {
+  type: 'conclusion'
+  title: string
+  summary: string
+  keyPoints: string[]
+  note?: string
+}
+
+/**
+ * Union principale des slides de soutenance.
+ */
 export type PresentationSlide =
   | OpeningSlide
-  | ContextSlide
   | ProblematicSlide
   | ObjectivesSlide
-  | HypothesesSlide
-  | MethodSlide
+  | StageSlide
+  | ProcedureSlide
+  | FfomSlide
+  | RecommendationsSlide
+  | ConclusionSlide
+
+/* -------------------------------------------------------------------------- */
+/*                              MEMOIRE                                       */
+/* -------------------------------------------------------------------------- */
 
 export type MemoirItemType =
   | 'bullet'
@@ -145,3 +212,4 @@ export interface MemoirContent {
   parts: MemoirPart[]
   tables: MemoirTable[]
 }
+
