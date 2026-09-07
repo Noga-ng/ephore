@@ -27,23 +27,23 @@ export const thesis: ThesisInfo = {
 }
 
 export const stats: StatItem[] = [
+   { 
+    value: '01', 
+    label: 'Problématique', 
+    detail: 'Le fil directeur de l’étude', 
+    icon: FileSearch 
+  },
+  { 
+    value: '02', 
+    label: 'Semaines de stage', 
+    detail: 'Immersion chez E-12 Entreprise', 
+    icon: GraduationCap 
+  },
   { 
     value: '03', 
     label: 'Parties principales', 
     detail: 'Du terrain aux recommandations', 
     icon: Route 
-  },
-  { 
-    value: '03', 
-    label: 'Semaines de stage', 
-    detail: 'Immersion chez 12 Entreprise', 
-    icon: GraduationCap 
-  },
-  { 
-    value: '01', 
-    label: 'Problématique', 
-    detail: 'Le fil directeur de l’étude', 
-    icon: FileSearch 
   },
   { 
     value: 'FFOM', 
@@ -59,7 +59,7 @@ export const parts = [
     eyebrow: 'Partie I',
     title: 'Méthodologie et recherche',
     description:
-      `Présentation du cadre académique, de la société AUXIMAD, 
+      `Présentation du cadre académique, de la société E-12 Entreprise, 
       du déroulement du stage et de la méthode de collecte des informations.`,
     icon: Landmark,
     accent: 'cyan',
