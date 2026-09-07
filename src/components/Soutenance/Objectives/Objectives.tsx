@@ -6,7 +6,7 @@ export default function Objectives({slide}: {slide: ObjectivesSlide}) {
   const Icon = slide.icon
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Kicker>{slide.kicker}</Kicker>
 
       <div className="grid gap-10 lg:grid-cols-[.92fr_1.08fr]">
