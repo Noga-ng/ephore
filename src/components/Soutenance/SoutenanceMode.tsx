@@ -221,7 +221,7 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
         className="
           absolute inset-x-0 bottom-0 z-30
           flex h-24 items-center justify-between
-          px-5 md:px-10 opacity-0 transition-all ease-in-out duration-200 hover:opacity-100
+          px-5 md:px-10 opacity-0 max-[550px]:opacity-100! transition-all ease-in-out duration-200 hover:opacity-100
         "
       >
         <div className="hidden items-center gap-2 md:flex">
@@ -235,7 +235,7 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
                   transition-all
                   ${
                     itemIndex === index
-                      ? 'w-10 bg-[#d7a34c]'
+                      ? 'w-10 bg-[#d7a34c] max-[550px]:bg-[#d7a34c]/5'
                       : 'w-3 bg-white/16 hover:bg-white/35'
                   }
                 `}
@@ -249,7 +249,12 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
           <button
             disabled={index === 0}
             onClick={() => go(index - 1)}
-            className="presentation-nav disabled:opacity-25"
+            className="
+            presentation-nav 
+            disabled:opacity-25
+            max-[550px]:opacity-25
+            max-[550px]:disabled:opacity-20
+            "
           >
             <ChevronLeft size={21} />
 
@@ -267,6 +272,8 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
               presentation-nav
               presentation-nav-primary
               disabled:opacity-25
+              max-[550px]:opacity-25
+              max-[550px]:disabled:opacity-20
             "
           >
             <span className="hidden sm:inline">

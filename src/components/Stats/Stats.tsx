@@ -6,7 +6,7 @@ export default function Stats() {
   initial={{ opacity: 0, y: 30 }} 
   animate={{ opacity: 1, y: 0 }} 
   transition={{ delay: .8, duration: .65 }} 
-  className="grid overflow-hidden rounded-[22px] border border-white/12 
+  className="grid overflow-hidden mt-2 rounded-[22px] border border-white/12 
   bg-[#071a2b]/88 shadow-2xl shadow-black/25 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
     {
     stats.map(({ value, label, detail, icon: Icon }, index) => 

@@ -21,24 +21,65 @@ export const presentationSlides = [
   /* ---------------------------------------------------------------------- */
   /* 1. INTRODUCTION                                                        */
   /* ---------------------------------------------------------------------- */
-  {
-    id: 'opening',
-    type: 'opening',
-    kicker: '01 · Introduction',
-    title: 'Analyse de la procédure d’exportation de l’art malgache',
-    subtitle: 'Transit & Douane · Toamasina · 2026',
-    note:
-      `Une étude consacrée aux procédures, aux contraintes et aux possibilités 
-      d’amélioration de l’exportation des œuvres d’art malgaches.`,
-  },
+ {
+  id: 'opening',
+  type: 'opening',
+  kicker: '01 · Introduction',
+  title: 'Analyse de la procédure d’exportation des œuvres d’art malagasy',
+  subtitle: 'Mémoire de fin d’études · Transit & Douane',
+  note:
+    `Une étude consacrée au fonctionnement de l’exportation des œuvres d’art malagasy,
+    aux formalités qui l’encadrent et aux contraintes pouvant influencer la fluidité des opérations.`,
+},
 
+  /**
+   * -----------------------------------------------------------------------
+   * 2.CONTEXT
+   * -----------------------------------------------------------------------
+   */
+{
+  id: 'context',
+  type: 'context',
+  kicker: '02 · Contexte',
+  title: 'Un patrimoine artistique riche, mais une exportation encadrée.',
+  description:
+    `Madagascar possède un patrimoine artistique et artisanal riche et diversifié,
+    représenté notamment par les sculptures, peintures, objets artisanaux,
+    œuvres traditionnelles et créations issues du savoir-faire local.`,
+  points: [
+    {
+      title: 'Richesse culturelle',
+      text:
+        'Les œuvres d’art malagasy constituent un patrimoine culturel important.',
+      icon: Building2,
+    },
+    {
+      title: 'Potentiel économique',
+      text:
+        'L’exportation peut contribuer au développement des artisans et à la valorisation du savoir-faire malgache.',
+      icon: Globe2,
+    },
+    {
+      title: 'Procédure réglementée',
+      text:
+        'La sortie des œuvres nécessite le respect de plusieurs formalités administratives, douanières et réglementaires.',
+      icon: ClipboardCheck,
+    },
+    {
+      title: 'Enjeu logistique',
+      text:
+        'Les délais, les coûts et l’organisation du transport peuvent influencer la fluidité des opérations.',
+      icon: Ship,
+    },
+  ],
+},
   /* ---------------------------------------------------------------------- */
-  /* 2. PROBLÉMATIQUE                                                       */
+  /* 3. PROBLÉMATIQUE                                                       */
   /* ---------------------------------------------------------------------- */
   {
     id: 'problematic',
     type: 'problematic',
-    kicker: '02 · Problématique',
+    kicker: '03 · Problématique',
     title: 'Les faiblesses constatées dans les procédures administratives et douanières actuelles ralentissent-elles la fluidité de l’exportation des œuvres d’art malgaches ?',
     question:
       'Comment les procédures administratives, douanières et logistiques influencent-elles la fluidité de l’exportation des œuvres d’art malgaches ?',
@@ -53,12 +94,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 3. OBJECTIFS                                                           */
+  /* 4. OBJECTIFS                                                           */
   /* ---------------------------------------------------------------------- */
   {
     id: 'objectives',
     type: 'objectives',
-    kicker: '03 · Objectifs',
+    kicker: '04 · Objectifs',
     title: 'Comprendre le circuit pour identifier où agir.',
     mainObjective:
       'Analyser la procédure d’exportation des œuvres d’art malgaches afin d’en comprendre le fonctionnement et d’identifier les principales contraintes administratives, douanières et logistiques.',
@@ -73,12 +114,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 4. STAGE                                                               */
+  /* 5. STAGE                                                               */
   /* ---------------------------------------------------------------------- */
   {
     id: 'stage',
     type: 'stage',
-    kicker: '04 · Stage',
+    kicker: '05 · Stage',
     title: 'Une étude réalisée au contact du terrain professionnel.',
     company: 'E-12 Entreprise',
     location: 'Antananarivo',
@@ -119,12 +160,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 5. PROCÉDURE EN 3 PHASES                                               */
+  /* 6. PROCÉDURE EN 3 PHASES                                               */
   /* ---------------------------------------------------------------------- */
   {
     id: 'procedure',
     type: 'procedure',
-    kicker: '05 · Procédure',
+    kicker: '06 · Procédure',
     title: 'Une procédure structurée autour de trois grandes phases.',
     phases: [
       {
@@ -170,12 +211,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 6. FFOM                                                                */
+  /* 7. FFOM                                                                */
   /* ---------------------------------------------------------------------- */
   {
     id: 'ffom',
     type: 'ffom',
-    kicker: '06 · Analyse FFOM',
+    kicker: '07 · Analyse FFOM',
     title: 'Les principaux facteurs qui influencent l’exportation.',
     strengths: {
       title: 'Forces',
@@ -214,12 +255,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 7. RECOMMANDATIONS                                                     */
+  /* 8. RECOMMANDATIONS                                                     */
   /* ---------------------------------------------------------------------- */
   {
     id: 'recommendations',
     type: 'recommendations',
-    kicker: '07 · Recommandations',
+    kicker: '08 · Recommandations',
     title: 'Agir sur la procédure pour rendre l’exportation plus fluide.',
     recommendations: [
       {
@@ -268,12 +309,12 @@ export const presentationSlides = [
   },
 
   /* ---------------------------------------------------------------------- */
-  /* 8. CONCLUSION                                                          */
+  /* 9. CONCLUSION                                                          */
   /* ---------------------------------------------------------------------- */
   {
     id: 'conclusion',
     type: 'conclusion',
-    kicker: '08 · Conclusion',
+    kicker: '09 · Conclusion',
     title: 'Une procédure à sécuriser, mais aussi à fluidifier.',
     summary:
       'L’exportation des œuvres d’art malgaches représente un potentiel important pour la valorisation du patrimoine et le développement économique. Cependant, les contraintes administratives, douanières, logistiques et les délais peuvent limiter cette dynamique.',
@@ -286,6 +327,21 @@ export const presentationSlides = [
     ],
     note:
       'L’amélioration de la procédure passe donc par la simplification, la digitalisation, la coordination des acteurs et la valorisation du patrimoine artistique malgache.',
+  },
+
+  /**
+   * -------------------------------------------------------------------------------------------
+   * FIN DE LA PRESENTATION
+   * -------------------------------------------------------------------------------------------
+   */
+
+  {
+  id: 'terminate',
+  type: 'terminate',
+  kicker: 'FIN DE LA PRÉSENTATION',
+  title: 'MERCI POUR VOTRE ATTENTION',
+  footer:
+    'Je vous remercie pour votre attention et reste à votre disposition pour répondre à vos éventuelles questions.',
   },
 ] satisfies [PresentationSlide, ...PresentationSlide[]]
 

@@ -20,6 +20,7 @@ import PartCard from './components/Parts/PartCard'
 import FeatureGrid from './components/Includes/FeatureGrid'
 import Footer from './components/Includes/Footer'
 import SoutenanceMode from './components/Soutenance/SoutenanceMode'
+import LoadingPage from './components/loading/loading'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -40,6 +41,11 @@ export default function App():ReactElement {
     document.documentElement.classList.toggle('light-theme', !dark)
   }, [dark])
 
+  useEffect(()=>{
+    window.addEventListener('DOMContentLoaded',()=>{
+      <LoadingPage/>
+    });
+  })
   const scrollTo = (id: string): void => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)

@@ -57,6 +57,18 @@ export interface OpeningSlide extends BaseSlide {
   note: string
 }
 
+export interface ContextPoint{
+  title:string,
+  text:string,
+  icon:AppIcon
+}
+export interface ContextSlide extends BaseSlide{
+  type:"context",
+  title:string,
+  description:string,
+  points:ContextPoint[]
+}
+
 /**
  * 2. Problématique
  */
@@ -160,11 +172,18 @@ export interface ConclusionSlide extends BaseSlide {
   note?: string
 }
 
+export interface Terminate extends BaseSlide{
+  type:'terminate',
+  title:string,
+  footer:string
+}
+
 /**
  * Union principale des slides de soutenance.
  */
 export type PresentationSlide =
   | OpeningSlide
+  | ContextSlide
   | ProblematicSlide
   | ObjectivesSlide
   | StageSlide
@@ -172,6 +191,7 @@ export type PresentationSlide =
   | FfomSlide
   | RecommendationsSlide
   | ConclusionSlide
+  | Terminate
 
 /* -------------------------------------------------------------------------- */
 /*                              MEMOIRE                                       */
