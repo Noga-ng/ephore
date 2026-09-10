@@ -116,6 +116,140 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
   return (
     <div className="fixed inset-0 z-200 overflow-hidden bg-[#041521] text-white">
       {/* Background */}
+
+      {/* =========================
+    Animated Background
+========================= */}
+<div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+  {/* Halo doré — haut droite */}
+  <motion.div
+    className="
+      absolute
+      -right-40
+      -top-40
+      h-112
+      w-md
+      rounded-full
+      bg-[#d7a34c]/10
+      blur-[120px]
+    "
+    animate={{
+      x: [0, -70, 20, 0],
+      y: [0, 60, -20, 0],
+      scale: [1, 1.12, 0.96, 1],
+      opacity: [0.7, 1, 0.75, 0.7],
+    }}
+    transition={{
+      duration: 18,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Halo cyan — bas gauche */}
+  <motion.div
+    className="
+      absolute
+      -bottom-40
+      -left-40
+      h-112
+      w-md
+      rounded-full
+      bg-cyan-500/8
+      blur-[120px]
+    "
+    animate={{
+      x: [0, 80, -20, 0],
+      y: [0, -50, 30, 0],
+      scale: [1, 0.92, 1.1, 1],
+      opacity: [0.6, 0.9, 0.65, 0.6],
+    }}
+    transition={{
+      duration: 22,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Lumière centrale très discrète */}
+  <motion.div
+    className="
+      absolute
+      left-1/2
+      top-1/2
+      h-80
+      w-80
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      bg-white/1.5
+      blur-[100px]
+    "
+    animate={{
+      scale: [1, 1.18, 1],
+      opacity: [0.2, 0.5, 0.2],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Petites particules */}
+  {Array.from({ length: 16 }).map((_, i) => (
+    <motion.span
+      key={i}
+      className="
+        absolute
+        h-1
+        w-1
+        rounded-full
+        bg-white/15
+      "
+      style={{
+        left: `${(i * 43) % 100}%`,
+        top: `${(i * 67) % 100}%`,
+      }}
+      animate={{
+        y: [0, -25, 0],
+        x: [
+          0,
+          i % 2 === 0 ? 12 : -12,
+          0,
+        ],
+        opacity: [0.1, 0.35, 0.1],
+      }}
+      transition={{
+        duration: 6 + (i % 4),
+        delay: i * 0.25,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  ))}
+</div>
+
+{/* Radial gradients fixes */}
+<div
+  className="
+    pointer-events-none
+    absolute
+    inset-0
+    bg-[radial-gradient(
+      circle_at_75%_20%,
+      rgba(210,157,72,.18),
+      transparent_28%
+    ),
+    radial-gradient(
+      circle_at_10%_80%,
+      rgba(22,120,132,.18),
+      transparent_24%
+    )]
+  "
+/>
+
       <div
         className="
           pointer-events-none absolute inset-0
@@ -139,7 +273,7 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
       <header
         className="
           relative inset-x-0 top-0 z-30
-          flex h-20 items-center justify-between
+          flex opacity-[0] hover:opacity-[1] transition-all ease-in-out duration-75 max-[550px]:opacity-[1] h-20 items-center justify-between
           px-5 md:px-10
         "
       >
@@ -158,7 +292,7 @@ export default function SoutenanceMode({onClose}: SoutenanceModeProps) {
             </p>
 
             <p className="mt-1 text-xs text-white/45">
-              Présentation synthétique
+              MIASA Ephore Exthélène
             </p>
           </div>
         </div>

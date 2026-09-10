@@ -47,14 +47,58 @@ interface BaseSlide {
   kicker: string
 }
 
+export interface PartiItem extends BaseSlide {
+  type:'parti',
+  head:string,
+  title:string
+}
+
+interface NoteItem {
+  title:string,
+  subtitle:string
+}
+
+export interface ProgramSlide extends BaseSlide{
+  type:"program",
+  title:string,
+  notes:NoteItem[]
+}
+
 /**
  * 1. Introduction
  */
 export interface OpeningSlide extends BaseSlide {
   type: 'opening'
+
+  // En-tête gauche
+  school: {
+    name: string
+    subtitle: string
+    logo: string
+  }
+
+  // En-tête droite
+  company: {
+    name: string
+    subtitle: string
+    logo: string
+  }
+
+  // Sujet
+  theme: string
   title: string
-  subtitle: string
-  note: string
+
+  // Informations académiques
+  presentedBy: string
+  supervisor: string
+
+  // Bas de slide
+  sectionNumber: string
+  sectionTitle: string
+
+  // Images de la composition
+  mainImage: string
+  secondaryImage?: string
 }
 
 export interface ContextPoint{
@@ -101,14 +145,13 @@ export interface StageInfo {
 
 export interface StageSlide extends BaseSlide {
   type: 'stage'
-  title: string
   company: string
-  location: string
-  duration: string
+  ecole:string
   description: string
-  activities: string[]
-  infos: StageInfo[]
-  image:string
+  ecoleInfo:StageInfo[]
+  StageInfos: StageInfo[]
+  imageE:string
+  imageI:string
 }
 
 /**
@@ -122,12 +165,17 @@ export interface ProcedurePhase {
   icon: AppIcon
 }
 
+export interface ProcedureIntroductionItem {
+  title: string
+  description: string
+  icon: React.ElementType
+}
+
 export interface ProcedureSlide extends BaseSlide {
   type: 'procedure'
   title: string
   phases: ProcedurePhase[]
 }
-
 /**
  * 6. Analyse FFOM
  */
@@ -168,7 +216,11 @@ export interface ConclusionSlide extends BaseSlide {
   type: 'conclusion'
   title: string
   summary: string
-  keyPoints: string[]
+  image:{
+    i1:string,
+    i2:string,
+    i3:string
+  }
   note?: string
 }
 
@@ -182,6 +234,8 @@ export interface Terminate extends BaseSlide{
  * Union principale des slides de soutenance.
  */
 export type PresentationSlide =
+    OpeningSlide
+  | ProgramSlide
   | OpeningSlide
   | ContextSlide
   | ProblematicSlide

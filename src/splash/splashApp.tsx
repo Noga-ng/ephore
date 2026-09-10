@@ -22,12 +22,14 @@ export function SplashApp() {
         const main = new WebviewWindow('main', {
           url: 'index.html',
           title: 'Ephore',
-          width: 1400,
-          height: 900,
+          width: 1200,
+          height: 720,
           minHeight:600,
           minWidth:500,
+          maximized:true,
           resizable: true,
-          fullscreen: false
+          fullscreen: false,
+          decorations:true
         })
 
         // Attendre que la fenêtre principale soit créée

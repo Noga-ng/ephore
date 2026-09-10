@@ -4,8 +4,8 @@ import Context from "../Context/Context"
 import Ffom from "../Ffom/Ffom"
 import Objectives from "../Objectives/Objectives"
 import Opening from "../Opening/Opening"
-import Problematic from "../Problematic/Problematic"
 import Procedure from "../Procedure/Procedure"
+import Programs from "../Program/Program"
 import Recommendations from "../Recommendations/Recommendations"
 import Stage from "../Stage/Stage"
 import Terminate from "../Terminate/Terminate"
@@ -15,11 +15,11 @@ export default function SlideContent({slide}: {slide: PresentationSlide}) {
     case 'opening':
       return <Opening slide={slide} />
     
+    case 'program':
+      return <Programs slide={slide}/>
+    
     case 'context':
       return <Context slide={slide} />
-
-    case 'problematic':
-      return <Problematic slide={slide} />
 
     case 'objectives':
       return <Objectives slide={slide} />

@@ -2,7 +2,6 @@ import {
   Building2,
   ClipboardCheck,
   FileCheck2,
-  FileText,
   Globe2,
   Handshake,
   Lightbulb,
@@ -11,27 +10,57 @@ import {
   ShieldCheck,
   Target,
   Users,
-  Clock,
 } from 'lucide-react'
 
 import type { PresentationSlide } from './types'
 import e12 from "./assets/images/E12 GROUP LOGISTICS .jpg"
 import { FaLocationDot } from 'react-icons/fa6'
+import art6 from "./assets/images/art6.jpg"
+import port2 from "./assets/images/port2.jpg"
+import icg from "./assets/images/icg.jpg"
+import { BsQuestion } from 'react-icons/bs'
+import art9 from './assets/images/art9.jpg'
+import art8 from './assets/images/art8.jpg'
+import art7 from './assets/images/art7.jpg'
+
+
 export const presentationSlides = [
   /* ---------------------------------------------------------------------- */
   /* 1. INTRODUCTION                                                        */
   /* ---------------------------------------------------------------------- */
- {
-  id: 'opening',
-  type: 'opening',
-  kicker: '01 · Introduction',
-  title: 'Analyse de la procédure d’exportation des œuvres d’art malagasy',
-  subtitle: 'Mémoire de fin d’études · Transit & Douane',
-  note:
-    `Une étude consacrée au fonctionnement de l’exportation des œuvres d’art malagasy,
-    aux formalités qui l’encadrent et aux contraintes pouvant influencer la fluidité des opérations.`,
-},
 
+ {
+  id:"opening",
+  type: 'opening',
+  kicker:"Introduction",
+  school: {
+    name: 'ICG',
+    subtitle: 'Instituts de Commerce et Gestion',
+    logo: icg,
+  },
+
+  company: {
+    name: 'E-12 Entreprise',
+    subtitle: 'Import & Export',
+    logo: e12,
+  },
+
+  theme: 'thème',
+
+  title: "Analyse de la procédure d’exportation de l’art malagasy",
+
+  presentedBy: 'Mademoiselle MIASA Ephore Exthélène',
+
+  supervisor: 'Mr RANDRIANARISON Thierry Olivier',
+
+  sectionNumber: '01',
+
+  sectionTitle: 'Introduction',
+
+  mainImage: art6,
+
+  secondaryImage: port2,
+},
   /**
    * -----------------------------------------------------------------------
    * 2.CONTEXT
@@ -40,7 +69,7 @@ export const presentationSlides = [
 {
   id: 'context',
   type: 'context',
-  kicker: '02 · Contexte',
+  kicker: 'Contexte & Problématique',
   title: 'Un patrimoine artistique riche, mais une exportation encadrée.',
   description:
     `Madagascar possède un patrimoine artistique et artisanal riche et diversifié,
@@ -48,50 +77,14 @@ export const presentationSlides = [
     œuvres traditionnelles et créations issues du savoir-faire local.`,
   points: [
     {
-      title: 'Richesse culturelle',
+      title: 'Problématique',
       text:
-        'Les œuvres d’art malagasy constituent un patrimoine culturel important.',
-      icon: Building2,
-    },
-    {
-      title: 'Potentiel économique',
-      text:
-        'L’exportation peut contribuer au développement des artisans et à la valorisation du savoir-faire malgache.',
-      icon: Globe2,
-    },
-    {
-      title: 'Procédure réglementée',
-      text:
-        'La sortie des œuvres nécessite le respect de plusieurs formalités administratives, douanières et réglementaires.',
-      icon: ClipboardCheck,
-    },
-    {
-      title: 'Enjeu logistique',
-      text:
-        'Les délais, les coûts et l’organisation du transport peuvent influencer la fluidité des opérations.',
-      icon: Ship,
-    },
+        `Les faiblesses constatées dans les procédures administratives et douanières 
+          actuelles ralentissent-elles la fluidité de l’exportation des œuvres d’art malgaches ?`,
+      icon: BsQuestion,
+    }
   ],
 },
-  /* ---------------------------------------------------------------------- */
-  /* 3. PROBLÉMATIQUE                                                       */
-  /* ---------------------------------------------------------------------- */
-  {
-    id: 'problematic',
-    type: 'problematic',
-    kicker: '03 · Problématique',
-    title: 'Les faiblesses constatées dans les procédures administratives et douanières actuelles ralentissent-elles la fluidité de l’exportation des œuvres d’art malgaches ?',
-    question:
-      'Comment les procédures administratives, douanières et logistiques influencent-elles la fluidité de l’exportation des œuvres d’art malgaches ?',
-    chips: [
-      'Formalités',
-      'Coordination',
-      'Délais',
-      'Conformité',
-      'Logistique',
-      'Fluidité',
-    ],
-  },
 
   /* ---------------------------------------------------------------------- */
   /* 4. OBJECTIFS                                                           */
@@ -99,7 +92,7 @@ export const presentationSlides = [
   {
     id: 'objectives',
     type: 'objectives',
-    kicker: '04 · Objectifs',
+    kicker: 'Objectifs',
     title: 'Comprendre le circuit pour identifier où agir.',
     mainObjective:
       'Analyser la procédure d’exportation des œuvres d’art malgaches afin d’en comprendre le fonctionnement et d’identifier les principales contraintes administratives, douanières et logistiques.',
@@ -113,111 +106,132 @@ export const presentationSlides = [
     icon: Target,
   },
 
+  /**
+   * =====================================================
+   * Annonce du Plan
+   * =====================================================
+   */
+  {
+  id: "program",
+  type: "program",
+  kicker: "PLAN DE PRÉSENTATION",
+  title: "Structure de la présentation",
+  notes: [
+    {
+      title: "Partie I — Méthodologie et Recherche",
+      subtitle: "Présentation de l’ICG et de l’entreprise d’accueil."
+    },
+    {
+      title: "Partie II — Résultats des Recherches",
+      subtitle: "Transit, douane et analyse de la procédure d’exportation des œuvres d’art malagasy."
+    },
+    {
+      title: "Partie III — Discussion et Recommandations",
+      subtitle: "Analyse FFOM et recommandations pour améliorer la procédure."
+    }
+  ]
+},
+
   /* ---------------------------------------------------------------------- */
   /* 5. STAGE                                                               */
   /* ---------------------------------------------------------------------- */
   {
-    id: 'stage',
-    type: 'stage',
-    kicker: '05 · Stage',
-    title: 'Une étude réalisée au contact du terrain professionnel.',
-    company: 'E-12 Entreprise',
-    location: 'Antananarivo',
-    duration: '03 semaines',
-    image:e12,
-    description:
-      `Le stage a permis d’observer concrètement les 
-      opérations liées au transit, aux formalités douanières et à l’exportation, 
-      tout en recueillant les informations nécessaires à l’analyse.`,
-    activities: [
-      'Observation des pratiques professionnelles.',
-      'Analyse des documents et pièces utilisés dans les opérations.',
-      'Recherche d’informations sur les procédures de transit et de douane.',
-      'Identification des difficultés et contraintes rencontrées.',
-    ],
-    infos: [
-      {
-        label: 'Structure d’accueil',
-        value: 'E-12 Entreprise',
-        icon: Building2,
-      },
-      {
-        label: 'Lieu',
-        value: 'Antananarivo',
-        icon: FaLocationDot,
-      },
-      {
-        label: 'Durée',
-        value: '03 semaines',
-        icon: Clock,
-      },
-      {
-        label: 'Domaine',
-        value: 'Transit & Douane',
-        icon: FileText,
-      },
-    ],
-  },
+  id: 'stage',
+  type: 'stage',
+  kicker: 'Partie I · Présentation de l’ICG & contenu du stage',
+  company: 'E-12 Entreprise',
+  ecole:"Institus de Commerce & Gestion",
+  imageE: e12,
+  imageI:icg,
+  description:
+    `La formation en Transit et Douane à l’ICG a été complétée par une expérience de terrain au sein de E-12 Entreprise, permettant d’observer concrètement les opérations de transit, les formalités douanières et le suivi des dossiers d’importation et d’exportation.`,
+
+  StageInfos: [
+    {
+      label: 'Entreprise',
+      value: 'E-12 Entreprise',
+      icon: Building2,
+    },
+    {
+      label: 'Lieu du stage',
+      value: 'Antananarivo',
+      icon: FaLocationDot,
+    }
+  ],
+
+   ecoleInfo: [
+    {
+      label: 'Établissement',
+      value: 'Institut de Commerce et de Gestion (ICG)',
+      icon: Building2,
+    },
+    {
+      label: 'Lieu',
+      value: 'Tanambo V, Toamasina',
+      icon: FaLocationDot,
+    }
+  ],
+},
 
   /* ---------------------------------------------------------------------- */
   /* 6. PROCÉDURE EN 3 PHASES                                               */
   /* ---------------------------------------------------------------------- */
-  {
-    id: 'procedure',
-    type: 'procedure',
-    kicker: '06 · Procédure',
-    title: 'Une procédure structurée autour de trois grandes phases.',
-    phases: [
-      {
-        number: '01',
-        title: 'Phase administrative et ministérielle',
-        description:
-          'Préparer et obtenir les documents ainsi que les autorisations nécessaires avant l’exportation.',
-        steps: [
-          'Identification de l’œuvre et vérification de sa nature.',
-          'Préparation des documents administratifs.',
-          'Obtention des autorisations nécessaires.',
-          'Constitution du dossier d’exportation.',
-        ],
-        icon: ClipboardCheck,
-      },
-      {
-        number: '02',
-        title: 'Phase logistique et douanière',
-        description:
-          'Organiser l’acheminement de l’œuvre et accomplir les formalités douanières.',
-        steps: [
-          'Préparation et conditionnement de l’œuvre.',
-          'Organisation du transport et de la logistique.',
-          'Déclaration auprès de la douane.',
-          'Contrôle et validation des formalités.',
-        ],
-        icon: ShieldCheck,
-      },
-      {
-        number: '03',
-        title: 'Phase maritime ou aérienne',
-        description:
-          'Assurer l’expédition internationale de l’œuvre jusqu’à sa destination finale.',
-        steps: [
-          'Réservation du transport international.',
-          'Remise de la marchandise au transporteur.',
-          'Expédition par voie maritime ou aérienne.',
-          'Suivi de l’acheminement jusqu’à destination.',
-        ],
-        icon: Ship,
-      },
-    ],
-  },
+ {
+  id: 'procedure',
+  type: 'procedure',
+  kicker: 'Partie II · Résultats de recherche',
+  title: 'Transit, douane et procédure d’exportation des œuvres d’art malagasy.',
+  phases: [
+    {
+      number: '01',
+      title: 'Transit',
+      description:
+        'Facilite l’acheminement des marchandises sous contrôle douanier et assure le suivi des opérations.',
 
+      steps: [
+        ''
+      ],
+
+      icon: ClipboardCheck,
+    },
+
+    {
+      number: '02',
+      title: 'Douane',
+      description:
+      'Contrôle les marchandises et les documents et veille au respect de la réglementation douanière.',
+
+      steps: [
+      ''
+      ],
+
+      icon: ShieldCheck,
+    },
+
+    {
+      number: '03',
+      title: 'procédure d’exportation des œuvres d’art malagasy',
+      description:
+        'Ensemble des étapes administratives, douanières et logistiques permettant l’exportation de l’œuvre.',
+
+      steps: [
+      ''
+      ],
+
+      icon: Ship,
+    },
+  ],
+},
   /* ---------------------------------------------------------------------- */
   /* 7. FFOM                                                                */
   /* ---------------------------------------------------------------------- */
   {
     id: 'ffom',
     type: 'ffom',
-    kicker: '07 · Analyse FFOM',
-    title: 'Les principaux facteurs qui influencent l’exportation.',
+    kicker: 'Partie III · Discussion & Recommendation',
+    title: `
+     L’analyse FFOM
+    `,
     strengths: {
       title: 'Forces',
       items: [
@@ -260,8 +274,8 @@ export const presentationSlides = [
   {
     id: 'recommendations',
     type: 'recommendations',
-    kicker: '08 · Recommandations',
-    title: 'Agir sur la procédure pour rendre l’exportation plus fluide.',
+    kicker: 'Partie III · Discussion & Recommendation',
+    title: 'Recommendation',
     recommendations: [
       {
         number: '01',
@@ -314,19 +328,18 @@ export const presentationSlides = [
   {
     id: 'conclusion',
     type: 'conclusion',
-    kicker: '09 · Conclusion',
+    kicker: 'Conclusion',
     title: 'Une procédure à sécuriser, mais aussi à fluidifier.',
     summary:
       'L’exportation des œuvres d’art malgaches représente un potentiel important pour la valorisation du patrimoine et le développement économique. Cependant, les contraintes administratives, douanières, logistiques et les délais peuvent limiter cette dynamique.',
-    keyPoints: [
-      'La procédure d’exportation implique plusieurs acteurs et plusieurs étapes.',
-      'Les formalités et la coordination peuvent générer des délais supplémentaires.',
-      'La digitalisation et la simplification peuvent améliorer la fluidité.',
-      'Une meilleure organisation logistique peut réduire les coûts et les délais.',
-      'La promotion de l’art malgache peut renforcer sa présence sur le marché international.',
-    ],
+    image:{
+      i1:art9,
+      i2:art8,
+      i3:art7
+    },
     note:
-      'L’amélioration de la procédure passe donc par la simplification, la digitalisation, la coordination des acteurs et la valorisation du patrimoine artistique malgache.',
+      `L’amélioration de la procédure passe donc par la simplification, 
+      la digitalisation, la coordination des acteurs et la valorisation du patrimoine artistique malgache.`,
   },
 
   /**
@@ -345,3 +358,11 @@ export const presentationSlides = [
   },
 ] satisfies [PresentationSlide, ...PresentationSlide[]]
 
+
+// [
+//       'La procédure d’exportation implique plusieurs acteurs et plusieurs étapes.',
+//       'Les formalités et la coordination peuvent générer des délais supplémentaires.',
+//       'La digitalisation et la simplification peuvent améliorer la fluidité.',
+//       'Une meilleure organisation logistique peut réduire les coûts et les délais.',
+//       'La promotion de l’art malgache peut renforcer sa présence sur le marché international.',
+//     ]

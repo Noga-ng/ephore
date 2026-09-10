@@ -26,3 +26,5 @@ dist-electron
 *.njsproj
 *.sln
 *.sw?
+tsconfig.electron.tsbuildinfo
+tsconfig.electron.json

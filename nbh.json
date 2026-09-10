@@ -1,0 +1,49 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "ephore",
+  "version": "1.1.0",
+  "identifier": "com.noga.ephore",
+
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+
+  "app": {
+   "windows": [
+  {
+    "label": "splash",
+    "title": "Ephore",
+    "url": "splash.html",
+    "width": 500,
+    "height": 350,
+    "resizable": false,
+    "fullscreen": false,
+    "decorations": false,
+    "center": true,
+    "visible": true
+  }
+],
+    "security": {
+      "csp": null
+    }
+  },
+
+ "bundle": {
+  "active": true,
+  "targets": ["nsis"],
+  "icon": [
+    "icons/noga.ico"
+  ],
+  "windows": {
+    "nsis": {
+      "installMode": "currentUser"
+    }
+  },
+  "android": {
+      "debugApplicationIdSuffix": ".debug"
+    }
+}
+}

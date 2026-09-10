@@ -1,15 +1,45 @@
 import type { ConclusionSlide } from "../../../types"
 import Kicker from "../Kicker/Kicker"
-import {motion} from "framer-motion"
+import {motion, type Variants} from "framer-motion"
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export default function Conclusion({slide}: {slide: ConclusionSlide}) {
   return (
     <div className="w-full h-full flex flex-col">
       <Kicker>{slide.kicker}</Kicker>
 
-      <div className="grid gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
-        <div>
-          <h2
+      <div className="pointer-events-none absolute inset-0">
+
+        {/* Halo */}
+        <div
+          className="
+            absolute
+            right-[15%]
+            top-[30%]
+            h-112.5
+            w-112.5
+            rounded-full
+            bg-[#d94f0b]/7
+            blur-[120px]
+          "
+        />
+
+        {/* Cadre extérieur */}
+
+        <div className="absolute inset-5 lg:inset-7" />
+
+      </div>
+
+      <div className="grid gap-10 h-fit lg:grid-cols-[.95fr_1.05fr] lg:items-center">
+        <motion.div
+        variants={fadeUp}
+        >
+          <motion.h2
+          variants={fadeUp}
             className="
               font-display
               text-[clamp(3rem,5vw,6rem)]
@@ -18,7 +48,7 @@ export default function Conclusion({slide}: {slide: ConclusionSlide}) {
             "
           >
             {slide.title}
-          </h2>
+          </motion.h2>
 
           <div
             className="
@@ -27,63 +57,107 @@ export default function Conclusion({slide}: {slide: ConclusionSlide}) {
               pl-5
             "
           >
-            <p className="text-base text-left leading-8 text-white/60 md:text-lg">
+            <motion.p 
+            variants={fadeUp}
+            className="text-base text-left leading-8 text-white/60 md:text-lg">
               {slide.summary}
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
         <div>
-          <div className="space-y-3">
-            {slide.keyPoints.map(
-              (point, i) => (
-                <motion.div
-                  key={point}
-                  initial={{
-                    opacity: 0,
-                    x: 25,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    delay: 0.1 + i * 0.08,
-                  }}
-                  className="
-                    flex items-start gap-4
-                    rounded-xl
-                    border border-white/8
-                    bg-white/[.035]
-                    px-5 py-4
-                  "
-                >
-                  <span className="font-display text-xl text-[#d7a34c]">
-                    0{i + 1}
-                  </span>
+         <motion.div
+            variants={fadeUp}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.9,
+            }}
+            className="relative mx-auto h-125 w-full max-w-155 max-[650px]:hidden"
+          >
 
-                  <p className="text-sm leading-6 text-white/60">
-                    {point}
-                  </p>
-                </motion.div>
-              ),
-            )}
-          </div>
-
-          {slide.note && (
-            <div
+            {/* Image principale */}
+            <motion.div
+            variants={fadeUp}
               className="
-                mt-5 rounded-2xl
-                border border-[#d7a34c]/25
-                bg-[#d7a34c]/8
-                p-6
+                absolute
+                right-[10%]
+                top-[8%]
+                h-97.5
+                w-97.5
+                overflow-hidden
+              "
+              style={{
+                clipPath:
+                  'polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)',
+              }}
+            >
+              <img
+                src={slide.image.i1}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+
+
+            {/* Contour principal */}
+            <motion.div
+            variants={fadeUp}
+              className="
+                absolute
+                right-[10%]
+                top-[8%]
+                h-97.5
+                w-97.5
+                border
+                border-[#d94f0b]/70
+              "
+              style={{
+                clipPath:
+                  'polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)',
+              }}
+            />
+
+
+            {/* Image secondaire */}
+            {slide.image.i3 && (
+              <motion.div
+              variants={fadeUp}
+                className="
+                  absolute
+                  right-[10%]
+                  top-[7%]
+                  h-36.25
+                  w-36.25
+                  rounded-full
+                  overflow-hidden
+                "
+              >
+                <img
+                  src={slide.image.i3}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </motion.div>
+            )}
+
+            {/* Petit hexagone */}
+           <motion.div
+              variants={fadeUp}
+              className="
+                absolute
+                bottom-13
+                left-[27%]
+                rounded-full
+                overflow-hidden
+                h-35
+                w-35
               "
             >
-              <p className="text-sm leading-7 text-white/65">
-                {slide.note}
-              </p>
-            </div>
-          )}
+              <img src={slide.image.i2} className=" w-full h-full object-cover " alt="" />
+          </motion.div>
+
+          </motion.div>
         </div>
       </div>
     </div>

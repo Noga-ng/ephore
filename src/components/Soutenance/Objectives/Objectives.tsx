@@ -75,6 +75,7 @@ export default function Objectives({slide}: {slide: ObjectivesSlide}) {
                 }}
                 transition={{
                   delay: 0.1 + i * 0.08,
+                  duration:.7
                 }}
                 className="
                   flex items-center gap-4

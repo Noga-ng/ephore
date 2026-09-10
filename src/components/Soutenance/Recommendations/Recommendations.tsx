@@ -36,6 +36,7 @@ export default function Recommendations({slide}: {slide: RecommendationsSlide}) 
                 }}
                 transition={{
                   delay: 0.08 + i * 0.07,
+                  duration:.7
                 }}
                 className="
                   group relative
